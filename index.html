@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/mathjs@8.1.0/lib/browser/math.js"></script>
+    <script src="https://cdn.plot.ly/plotly-1.35.2.min.js"></script>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input{
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            margin-top: 1rem;
+        }
+
+        #submit {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .main-input{
+            display: flex;
+            padding: 2rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .result{
+            text-align: center;
+            margin-top: 1rem;
+        }
+    </style>
+    <title>ИЗ Методы Оптимизации</title>
+</head>
+<body>
+    <form id="main-form">
+        <div class="main-input">
+            <div class="input-group">
+                <label>Функция: </label>
+                <input type="text" id="input-function">
+            </div>
+            <div class="input-group">
+                <label>Граница a: </label>
+                <input type="number" id="input-a">
+            </div>
+            <div class="input-group">
+                <label>Граница b: </label>
+                <input type="number" id="input-b">
+            </div>
+            <div class="input-group">
+                <label>Количество итераций: </label>
+                <input type="number" id="input-n">
+            </div>
+            <div class="input-group">
+                <label>Искать минимум: </label>
+                <input type="checkbox" id="input-extremum">
+            </div>
+        </div>
+        <input id="submit" type="submit" value="Рассчитать">
+    </form>
+    <div class="result">
+        Результат: <span id="span-result"></span>
+    </div>
+    <div id="plot"></div>
+    <script src="./app.js"></script>
+</body>
+</html>
